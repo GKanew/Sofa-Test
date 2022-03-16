@@ -10,4 +10,5 @@ npm i express ejs mongoose method-override express-session passport passport-loc
 (para instalar os node_modules necessários)
 
 Após isso, para rodar basta executar "node app.js"
+
 Precisa de "mongod" rodando por trás para uso do banco de dados
