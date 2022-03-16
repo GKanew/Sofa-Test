@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Usuario</title>
+</head>
+<body>
+
+    <h1>Usuario: <%=usuario.nome%></h1>
+    <p>Email: <%=usuario.email%></p>
+    <!-- <p>Numero de avaliações: </p> -->
+    <!-- <p>Ultima avaliação: </p> -->
+
+    <div>
+        <a href="/usuarios/<%=usuario._id%>/edit">Editar</a>
+        <form action="/usuarios/<%=usuario._id%>?_method=DELETE" method="POST">
+            <button>Deletar</button>
+        </form>
+    </div>
+
+    <!-- <a href="/usuarios">Voltar para Inspetores</a>  Pagina não existe-->
+
+</body>
+</html>

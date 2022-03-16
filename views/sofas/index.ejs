@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Sofas</title>
+</head>
+<body>
+    <% if(currentUser.role==='Usuario' ){ %>
+    <h1>VOCÊ ESTÁ LOGADO COMO USUÁRIO</h1>
+    <% } else { %>
+    <h1>VOCÊ ESTÁ LOGADO COMO INSPETOR</h1>
+    <% } %>
+
+    <% if(!currentUser){ %>
+    <a href="/login">Login</a>
+    <% }else{ %>
+    <a href="/logout">Logout</a>
+    <% } %>
+    <% if(currentUser.role === 'Usuario'){ %>
+        <a href="/inspetores/">Ver Inspetores</a>
+    <% } %>
+    <h1>Todos os Sofas</h1>
+    <p>Sofas cadastrados: <%= sofas.length%></p>
+    <p>Total de avaliações realizadas: "5"</p>
+
+    <% if(currentUser.role === 'Usuario'){ %>
+        <a href="/sofas/new">Cadastrar Sofá</a>
+    <% } %>
+
+    <% for (let sofa of sofas) { %>
+    <div>
+        <h4>Nome Sofa: <a href="/sofas/<%=sofa._id%>"><%= sofa.nome%></a></h4>
+        <p>Num Lugares: <%= sofa.lugares%></p>
+        <p>Comprimento: <%= sofa.comprimento%>m</p>
+
+        <% if (sofa.laudo.estado === 'Pendente'){ %>
+            <% if (currentUser.role === 'Inspetor'){ %>
+                <a href="sofa/avaliar">Avaliar</a>
+            <% }else{ %>
+                <p>Estado Avaliação: <%= sofa.laudo.estado%></p>
+            <% } %>
+        <% }else{ %>
+            <p>Estado Avaliação: <%= sofa.laudo.estado%></p>
+        <% } %>
+
+    </div>
+
+
+    <% } %>
+
+    <!-- <a href="/">Voltar pro login</a> -->
+</body>
+</html>

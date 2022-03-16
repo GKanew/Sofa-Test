@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Sofa</title>
+</head>
+<body>
+    <h1>Nome: <%=sofa.nome%></h1>
+    <p><%=sofa.lugares%> lugares</p>
+    <p>Comprimento: <%=sofa.comprimento%>m</p>
+
+    <div>
+        <a href="/sofas/<%=sofa._id%>/edit">Editar</a>
+        <form action="/sofas/<%=sofa._id%>?_method=DELETE" method="POST">
+            <button>Deletar</button>
+        </form>
+    </div>
+
+    <a href="/sofas">Voltar para Sofas</a>
+
+</body>
+</html>
