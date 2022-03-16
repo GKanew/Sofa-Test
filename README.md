@@ -3,5 +3,9 @@
 
 ==Autor: Gabriel Canel
 
-Para rodar, só executar "node app.js"
+É necessário executar inicialmente: 
+
+npm i express ejs mongoose method-override express-session passport passport-local passport-local-mongoose
+
+Após isso, para rodar basta executar "node app.js"
 Precisa de "mongod" rodando por trás para uso do banco de dados
